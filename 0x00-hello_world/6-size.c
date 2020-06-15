@@ -4,7 +4,7 @@
    *printing sizesk
    *Return: Always 0 (Succes)
    */
-	int main(void)
+int main(void)
 {
 	char charType;
 	int intType;
