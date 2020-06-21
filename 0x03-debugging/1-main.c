@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - cause an infinite loop
  * Return: 0
@@ -11,13 +10,14 @@ int i;
 printf("Infinite loop incoming :(\n");
 
 i = 0;
+
 /**
  * Commenting - loop
  * while (i < 10)
  *  {
- * putchar(i);
- *   }
+ * @i: i
  */
+putchar(i);
 
 printf("Infinite loop avoided! \\o/\n");
 return (0);
