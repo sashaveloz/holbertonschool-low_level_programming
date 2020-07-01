@@ -19,7 +19,7 @@ void print_diagsums(int *a, int size)
 	{
 		uno += a[i];
 	}
-	for (i -= size * 2; i >= 0; i -= size - 1)
+	for (i = size - 1; i < (size * size - 1); i += size - 1)
 	{
 		dos += a[i];
 	}
