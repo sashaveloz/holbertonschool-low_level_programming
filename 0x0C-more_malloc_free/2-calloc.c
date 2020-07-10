@@ -18,17 +18,16 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	ptr = malloc(nmemb * size);
+	ptr = malloc(sizeof(char) * nmemb * size);
 
 	if (!ptr)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i < (size * nmemb); i++)
+	for (i = 0; i < size * nmemb; i++)
 	{
+		ptr[i] = 0;
 	}
-
-	ptr[i] = 0;
 	return (ptr);
 }
