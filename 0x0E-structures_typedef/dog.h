@@ -4,6 +4,7 @@ typedef struct dog dog_t;
 
 #include <stdlib.h>
 #include <stdio.h>
+
 /**
  * struct dog - structure that prints a quote
  *@name: * name of dog
