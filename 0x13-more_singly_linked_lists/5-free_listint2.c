@@ -7,10 +7,13 @@
 
 void free_listint2(listint_t **head)
 {
-	if (head && *head)
+	if (head)
 	{
-		free_listint2(&(*(*head)).next);
-		free(*head);
+		if (*head)
+		{
+			free_listint2(&(*(*head)).next);
+			free(*head);
+		}
+		*head = NULL;
 	}
-	*head = NULL;
 }
