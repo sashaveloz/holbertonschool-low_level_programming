@@ -8,14 +8,14 @@
 
 size_t print_listint(const listint_t *h)
 {
-	size_t n_nodes;
+	size_t n_nodes = 0;
 
 	while (h)
 	{
 		printf("%d\n", h->n);
 
-		n_nodes++;
 		h = h->next;
+		n_nodes++;
 	}
 	return (n_nodes);
 }
