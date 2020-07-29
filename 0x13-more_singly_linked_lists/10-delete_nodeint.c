@@ -28,7 +28,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		idx++;
 		ptr_h = ptr_h->next;
 	}
-	if (!ptr_h || ptr_h->next)
+	if (!ptr_h || !ptr_h->next)
 		return (-1);
 
 	tmp = ptr_h->next->next;
