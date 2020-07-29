@@ -23,6 +23,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(ptr_h);
 		return (1);
 	}
+	idx = 0;
 	while (ptr_h && idx < (index - 1))
 	{
 		idx++;
