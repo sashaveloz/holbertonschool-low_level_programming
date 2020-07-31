@@ -26,4 +26,3 @@ unsigned int binary_to_uint(const char *b)
 	}
 	return (res);
 }
-© 2020 GitHub, Inc.

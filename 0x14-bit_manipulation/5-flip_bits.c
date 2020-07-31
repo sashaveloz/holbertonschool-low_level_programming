@@ -1,17 +1,21 @@
 #include "holberton.h"
 /**
- * clear_bit - sets the value of a bit to 0 at a given index.
- * @n: pointer.
- * @index: index.
- *
- * Return: 1 or -1;
+ * flip_bits - the number of bits you would need to flip to get
+ * from one number to another.
+ * @n: unsigned long int.
+ * @m: unsigned long int.
+ * Return: The number of bits you would need to
+ * flip to get from one number to another.
  */
-int clear_bit(unsigned long int *n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	if (index < 64)
+	int count = 0;
+
+	n ^= m;
+	while (n)
 	{
-		*n = *n & ~(1 << index);
-		return (1);
+		count += n & 1;
+		n = n >> 1;
 	}
-	return (-1);
+	return (count);
 }
