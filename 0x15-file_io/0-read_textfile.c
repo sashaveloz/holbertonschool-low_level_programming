@@ -9,23 +9,42 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t op;
-	char a[468];
+	int op, wr;
+	ssize_t lett;
+	char *rd = NULL;
 
 	if (filename == NULL)
 		return (0);
 
-	op = open("Requiescat", O_RDONLY, 0);
+	op = open(filename, O_RDONLY);
+	rd = malloc(sizeof(char) * letters);
 
-	if (op == -1)
+	if (!rd)
+	{
+		close(op);
+		free(rd);
+		return (0);
+	}
+	if (op < 0)
 		return (0);
 
-	read(op, a, 468);
-	a[468] = '\0';
+	lett = read(op, rd, letters);
 
+	if (lett < 0)
+	{
+		close(op);
+		free(rd);
+		return (0);
+	}
+	wr = write(STDOUT_FILENO, rd, lett);
+
+	if (wr < 0)
+	{
+		close(op);
+		free(rd);
+		return (0);
+	}
 	close(op);
-
-	printf("%s", a);
-
-	return (letters);
+	free(rd);
+	return (lett);
 }
